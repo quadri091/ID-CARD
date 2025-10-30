@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      body {
+        background: linear-gradient(to right, #e0eafc, #cfdef3);
+        padding: 40px 0px;
+      }
+      section {
+        margin: auto;
+        width: 350px;
+        height: 270px;
+        border-radius: 10px;
+        overflow: hidden;
+        background-color: whitesmoke;
+        box-shadow: 0 0px 55px rgba(0, 0, 0, 0.1), 0 0px 35px rgba(0, 0, 0, 0.1),
+          0 0px 15px rgba(0, 0, 0, 0.1);
+      }
+      main {
+        width: 100%;
+        height: 80%;
+        padding: 2% 0px;
+        align-items: center;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        img {
+          width: 120px;
+          height: 120px;
+          border-radius: 50%;
+        }
+      }
+      .small {
+        width: fit-content;
+        height: 37%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        p {
+          font-size: 13px;
+        }
+      }
+      .div {
+        height: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        background-color: green;
+      }
+      button {
+        padding: 5px 14px;
+      } */
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      body {
+        background: linear-gradient(to bottom, #e0eafc, #cfdef3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      section {
+        width: 300px;
+        margin-top: -20vh;
+        background-color: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(128, 128, 128, 0.635),
+          0 0 20px rgba(128, 128, 128, 0.635),
+          0 0 30px rgba(128, 128, 128, 0.635);
+        padding: 24px;
+        text-align: center;
+      }
+
+      img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 3px solid #ffffff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 16px;
+      }
+
+      h3 {
+        font-size: 18px;
+        color: #000000;
+        margin-bottom: 4px;
+      }
+
+      .small {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        b {
+          font-size: 14px;
+          color: #333333;
+        }
+      }
+
+      .div {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 16px;
+      }
+
+      button {
+        padding: 8px 16px;
+        border: 2px solid #0077cc;
+        background-color: white;
+        color: rgb(30, 94, 255);
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 15px;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #bddafc;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <main>
+        <img
+          id="image"
+          src="https://i.pinimg.com/originals/a2/ed/5b/a2ed5be4773311b2f5cd9b77478ea13d.png"
+          alt="Profile Picture"
+        />
+        <div class="small">
+          <h3 id="h3-tag">John Smith</h3>
+          <b id="job">Data Analyst</b>
+          <b id="age">22 years</b>
+          <b id="email">johnsmith12345@gmail.com</b>
+        </div>
+      </main>
+      <div class="div">
+        <button onclick="previous()">Previous</button>
+        <button onclick="next()">Next</button>
+      </div>
+    </section>
+  </body>
+</html>
+
+<script>
+  let image = document.getElementById("image");
+  let username = document.getElementById("h3-tag");
+  let job = document.getElementById("job");
+  let age = document.getElementById("age");
+  let email = document.getElementById("email");
+  let counter = 0;
+
+  let user1 = {
+    name: "John Smith",
+    job: "Data Analyst",
+    email: "johnsmith12345@gmail.com",
+    age: "22 years",
+    imgAdd:
+      "https://i.pinimg.com/originals/a2/ed/5b/a2ed5be4773311b2f5cd9b77478ea13d.png",
+  };
+
+  let user2 = {
+    name: "Isiah Richard",
+    job: "Web Developer",
+    age: "17 years",
+    email: "isiahrichard250@gmail.com",
+    imgAdd:
+      "https://i.pinimg.com/1200x/36/cb/cb/36cbcb28f87d185e2b7c5a5e630cf740.jpg",
+  };
+
+  let user3 = {
+    name: "Rafiu Fatimah",
+    job: "Web Designer",
+    age: "19 years",
+    email: "johnsmith12345@gmail.com",
+    imgAdd:
+      "https://i.pinimg.com/originals/52/89/05/528905f06c58c9d4b6f36c3635e97e42.png",
+  };
+
+  let user4 = {
+    name: "Adedeji Adedotun",
+    job: "Cyber Security",
+    age: "Àgbàlagbà",
+    email: "dejidamodot029@gmail.com",
+    imgAdd:
+      "https://i.pinimg.com/736x/1f/f5/23/1ff523437d411527b8b34afcb0828c24.jpg",
+  };
+
+  let user5 = {
+    name: "Adebayo Quadri",
+    age: "100 years",
+    job: "App developer",
+    email: "johnsmith12345@gmail.com",
+    imgAdd:
+      "https://i.pinimg.com/736x/7a/03/77/7a03779c3293785a94790a93d5c67fe1.jpg",
+  };
+
+  let array = [user1, user2, user3, user4, user5];
+  console.log(array);
+
+  function next() {
+    if (counter === array.length - 1) {
+      counter = 0;
+    } else {
+      counter++;
+    }
+    image.src = array[counter].imgAdd;
+    username.innerHTML = array[counter].name;
+    job.innerHTML = array[counter].job;
+    email.innerHTML = array[counter].email;
+    age.innerHTML = array[counter].age;
+  }
+
+  function previous() {
+    if (counter === 0) {
+      counter = array.length - 1;
+    } else {
+      counter--;
+    }
+    image.src = array[counter].imgAdd;
+    username.innerHTML = array[counter].name;
+    job.innerHTML = array[counter].job;
+    email.innerHTML = array[counter].email;
+    age.innerHTML = array[counter].age;
+  }
+</script>
